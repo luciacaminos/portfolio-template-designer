@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yma | graphiste</title>
+  <meta name="description" content="yma, graphiste chill spécialisé en bannières et logos propres avec Photoshop 2020." />
+  <meta property="og:title" content="yma | graphiste chill" />
+  <meta property="og:description" content="bannières stylées, logos simples, photoshop 2020." />
+  <meta property="og:image" content="https://tonsite.com/aperçu.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tonsite.com" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="px-6 py-10">
+  <div class="grain-overlay pointer-events-none fixed inset-0 z-40"></div>
+  <button id="darkModeToggle" class="toggle-btn" aria-label="Basculer mode sombre">🌙</button>
+
+  <div class="max-w-4xl mx-auto pt-24">
+    <h1 class="text-5xl font-bold mb-2 text-black dark:text-white">yma</h1>
+    <p class="text-gray-800 dark:text-gray-400">graphiste chill, fan de bannières, parfois des logos. photoshop 2020 c’est la base.</p>
+
+    <div class="mt-4 flex flex-wrap">
+      <span class="tag bg-yellow-600 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2">graphisme</span>
+      <span class="tag bg-blue-500 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2">photoshop 2020</span>
+      <span class="tag bg-pink-600 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2">bannières</span>
+      <span class="tag bg-purple-500 text-white text-xs px-3 py-1 rounded-full mr-2 mb-2">logos chill</span>
+    </div>
+
+    <div class="flex mt-4 gap-3 flex-wrap" id="contact">
+      <a href="https://guns.lol/kfc" class="border border-gray-700 text-black dark:text-white px-4 py-1 rounded hover:bg-gray-800">guns.lol</a>
+      <a href="https://twitter.com/yamofficiel_" class="border border-gray-700 text-black dark:text-white px-4 py-1 rounded hover:bg-gray-800">twitter</a>
+      <a href="javascript:void(0);" onclick="copyToClipboard('6de6')" class="border border-gray-700 text-black dark:text-white px-4 py-1 rounded hover:bg-gray-800">discord</a>
+    </div>
+
+    <div class="canvas mt-10 p-6 rounded-lg text-sm shadow-lg" id="bio">
+      <p class="text-pink-400 mb-3">// petite note perso</p>
+      <p class="text-black dark:text-white leading-relaxed">
+        hey 👋 moi c’est yma.<br><br>
+        je passe mes journées à bidouiller sur photoshop 2020, surtout pour faire des bannières stylées pour les réseaux.<br><br>
+        j’aime bien aussi poser des logos simples, propres, sans prise de tête.<br><br>
+        si t’as besoin d’un visuel qui claque sans faire mal aux yeux, t’es au bon endroit.
+      </p>
+    </div>
+
+    <div class="mt-16" id="bannieres">
+      <h2 class="text-2xl font-bold mb-4 text-black dark:text-white">mes bannières</h2>
+
+      <div class="flex gap-4 mb-6">
+        <button onclick="showYear('2024', this)" class="tab-button px-4 py-2 rounded-lg text-sm font-medium border border-gray-600 bg-gray-900 text-white active">2024</button>
+        <button onclick="showYear('2025', this)" class="tab-button px-4 py-2 rounded-lg text-sm font-medium border border-gray-600 bg-gray-800 text-white">2025</button>
+      </div>
+
+      <div id="gallery-2024" class="gallery showing grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img onclick="openModal(this)" src="bannieres/2024/marinkitagawa.png" class="rounded shadow cursor-pointer" alt="bannière marinkitagawa">
+        <img onclick="openModal(this)" src="bannieres/2024/panybannière.png" class="rounded shadow cursor-pointer" alt="bannière pany">
+        <img onclick="openModal(this)" src="bannieres/2024/xoyama3drougecolo.png" class="rounded shadow cursor-pointer" alt="bannière xoyama">
+      </div>
+
+      <div id="gallery-2025" class="gallery hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img onclick="openModal(this)" src="bannieres/2025/3xmakimavisual.png" class="rounded shadow cursor-pointer" alt="bannière makima">
+        <img onclick="openModal(this)" src="bannieres/2025/eerenjager.png" class="rounded shadow cursor-pointer" alt="bannière eren">
+        <img onclick="openModal(this)" src="bannieres/2025/mariopsdVé.png" class="rounded shadow cursor-pointer" alt="bannière mario">
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+    <div class="modal-frame relative">
+      <button onclick="closeModal()" class="close-btn" aria-label="Fermer">&times;</button>
+      <span class="arrow-btn arrow-left" onclick="prevImage()">&#8592;</span>
+      <span class="arrow-btn arrow-right" onclick="nextImage()">&#8594;</span>
+      <img id="modalImage" src="" class="rounded mb-3" alt="Image en plein écran" />
+      <div class="text-sm text-gray-300 text-center" id="modalInfo">Chargement...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
