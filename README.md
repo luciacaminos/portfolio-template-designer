@@ -43,7 +43,7 @@ welcome to my portfolio site! i'm **yma**, a chill graphic designer passionate a
 
 1. clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yma-portfolio.git
+   git clone https://github.com/luciacaminos/portfolio-template-designer.git
    ```
 
 2. open the `index.html` file in your browser to see the site.
@@ -60,8 +60,4 @@ this project is open-source and available under the [mit license](license).
 
 for inquiries, you can reach me via:
 - **twitter**: [@yamofficiel_](https://twitter.com/yamofficiel_)
-- **discord**: (click to copy the handle)
-
----
-
-enjoy exploring my portfolio! 🌟
+- **discord**: 6de6
